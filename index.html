@@ -11,56 +11,55 @@
 <body>
     <form id="songForm">
         <h2>Upload Song</h2>
-        
+
         <div class="form-group">
-            <label for="songFile">Audio File</label>
+            <label for="songFile">Song(Audio) File</label>
             <input type="file" id="songFile" accept="audio/*" required />
         </div>
-        
+
         <div class="form-group">
             <label for="title">Title</label>
             <input type="text" id="title" placeholder="Enter song title" required />
         </div>
-        
+
         <div class="form-group">
             <label for="artist">Artist/Movie</label>
             <input type="text" id="artist" placeholder="Enter artist or Movie name" required />
         </div>
-        
+
         <div class="form-group">
-            <label for="cover">Cover Image URL</label>
-            <input type="text" id="cover" placeholder="Enter cover image URL" required />
+            <label for="cover">Cover Image URL (optional)</label>
+            <input type="text" id="cover" placeholder="Enter cover image URL (optional)" />
         </div>
-        
+
         <div class="form-group">
-            <label for="duration">Duration (Random num)</label>
-            <input type="text" id="duration" placeholder="Enter Any random number" required />
+            <label for="duration">Duration (Optional)</label>
+            <input type="text" id="duration" placeholder="Enter duration in seconds (optional)" />
         </div>
-        
+
         <div class="form-group">
             <label for="genre">Genre</label>
             <input type="text" id="genre" placeholder="Romantic, devotional etc" required />
         </div>
-        
+
         <div class="form-group">
             <label for="language">Language</label>
             <input type="text" id="language" placeholder="Telugu, English, Hindi etc" required />
         </div>
-        
+
         <div class="progress-container" id="progressContainer">
             <div class="progress-bar" id="progressBar"></div>
             <span class="progress-text" id="progressText">0%</span>
         </div>
-        
+
         <button type="submit" id="submitBtn">
             <span class="button-text">Upload</span>
             <span class="spinner hidden" id="spinner"></span>
         </button>
-        
+
         <div class="status-message hidden" id="statusMessage"></div>
     </form>
 
-    <script src="https://unpkg.com/music-metadata-browser/dist/music-metadata-browser.min.js"></script>
     <script src="script.js"></script>
 </body>
 
