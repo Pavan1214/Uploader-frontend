@@ -91,9 +91,10 @@ button:disabled {
     background-color: #2a2a2a;
     border-radius: 12px;
     margin: 20px 0;
-    height: 14px;
+    height: 15px;
     position: relative;
     overflow: hidden;
+    
 }
 
 .progress-bar {
@@ -112,7 +113,6 @@ button:disabled {
     font-size: 12px;
     color: #fff;
 }
-
 .spinner {
     border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 50%;
