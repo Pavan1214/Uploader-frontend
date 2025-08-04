@@ -14,28 +14,28 @@ const statusMessage = document.getElementById('statusMessage');
 // Form submission handler
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     // Reset UI
     statusMessage.classList.add('hidden');
     progressBar.style.width = '0%';
     progressText.textContent = '0%';
     progressContainer.style.display = 'block';
-    
+
     // Disable submit button and show spinner
     submitBtn.disabled = true;
     spinner.classList.remove('hidden');
     submitBtn.querySelector('.button-text').textContent = 'Uploading...';
-    
+
     const file = songFileInput.files[0];
-const title = titleInput.value.trim();
-const artist = artistInput.value.trim();
-const genre = document.getElementById("genre").value.trim();
-const language = document.getElementById("language").value.trim();
+    const title = titleInput.value.trim();
+    const artist = artistInput.value.trim();
+    const genre = document.getElementById("genre").value.trim();
+    const language = document.getElementById("language").value.trim();
 
-const rawDuration = document.getElementById('duration').value.trim();
-const duration = rawDuration || "3"; // Default to 3 if empty
+    const rawDuration = document.getElementById('duration').value.trim();
+    const duration = rawDuration || "3"; // Default to 3 if empty
 
-const cover = document.getElementById('cover').value.trim();
+    const cover = document.getElementById('cover').value.trim();
 
 
     const cloudinaryURL = `https://api.cloudinary.com/v1_1/dodrw52td/video/upload`;
@@ -48,7 +48,7 @@ const cover = document.getElementById('cover').value.trim();
     try {
         // Upload to Cloudinary with progress tracking
         const xhr = new XMLHttpRequest();
-        
+
         xhr.upload.addEventListener('progress', (e) => {
             if (e.lengthComputable) {
                 const percentComplete = Math.round((e.loaded / e.total) * 100);
@@ -67,7 +67,7 @@ const cover = document.getElementById('cover').value.trim();
                     }
                 }
             };
-            
+
             xhr.open('POST', cloudinaryURL, true);
             xhr.send(formData);
         });
@@ -77,17 +77,20 @@ const cover = document.getElementById('cover').value.trim();
         }
 
         const url = cloudResponse.secure_url;
-        const songData = {
-  title,
-  artist,
-  cover,
-  url,
-  duration,
-  genre,
-  language
-};
+        const public_id = cloudResponse.public_id;
 
-if (cover) songData.cover = cover; // Only add if user provided a value
+        const songData = {
+            title,
+            artist,
+            cover,
+            url,
+            public_id,
+            duration,
+            genre,
+            language
+        };
+
+        if (cover) songData.cover = cover;
 
 
         // Send to backend
@@ -98,18 +101,18 @@ if (cover) songData.cover = cover; // Only add if user provided a value
         });
 
         const result = await backendRes.json();
-        
+
         // Show success message
         statusMessage.textContent = result.message || '✅ Song uploaded successfully!';
         statusMessage.classList.remove('hidden');
         statusMessage.classList.add('success');
-        
+
         // Reset form after successful upload
         form.reset();
         progressContainer.style.display = 'none';
     } catch (err) {
         console.error("Upload error:", err);
-        
+
         // Show error message
         statusMessage.textContent = "❌ Upload failed: " + (err.message || "Please try again later");
         statusMessage.classList.remove('hidden');
