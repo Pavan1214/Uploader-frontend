@@ -94,7 +94,7 @@ form.addEventListener('submit', async (e) => {
 
 
         // Send to backend
-        const backendRes = await fetch('https://uploader-backend-pif1.onrender.com/upload', {
+        const backendRes = await fetch('https://uploader-backend-1.onrender.com/upload', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(songData),
@@ -124,3 +124,4 @@ form.addEventListener('submit', async (e) => {
         submitBtn.querySelector('.button-text').textContent = 'Upload';
     }
 });
+
