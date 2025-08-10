@@ -1,3 +1,12 @@
+// ---------------------- Default Covers ----------------------
+const defaultCovers = [
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825471/frame-harirak-iPwHUd19R38-unsplash_h0t7ig.jpg", 
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825480/mikkel-bech-OwMIhcZu_X8-unsplash_cs78l3.jpg", 
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825473/leo-wieling-bG8U3kaZltE-unsplash_nzv8gm.jpg", 
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825480/kevin-mccutcheon-TcSckNRL9J8-unsplash_a1qyag.jpg",
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825482/lee-campbell-QVnw_3l_n0Y-unsplash_h7kk6d.jpg"  
+];
+
 // DOM Elements
 const form = document.getElementById('songForm');
 const songFileInput = document.getElementById('songFile');
@@ -9,7 +18,6 @@ const progressText = document.getElementById('progressText');
 const progressContainer = document.getElementById('progressContainer');
 const spinner = document.getElementById('spinner');
 const statusMessage = document.getElementById('statusMessage');
-
 
 // Form submission handler
 form.addEventListener('submit', async (e) => {
@@ -35,8 +43,10 @@ form.addEventListener('submit', async (e) => {
     const rawDuration = document.getElementById('duration').value.trim();
     const duration = rawDuration || "3"; // Default to 3 if empty
 
-    const cover = document.getElementById('cover').value.trim();
-
+    let cover = document.getElementById('cover').value.trim();
+    if (!cover) {
+        cover = defaultCovers[Math.floor(Math.random() * defaultCovers.length)];
+    }
 
     const cloudinaryURL = `https://api.cloudinary.com/v1_1/dodrw52td/video/upload`;
     const uploadPreset = "songscafe1214";
@@ -90,9 +100,6 @@ form.addEventListener('submit', async (e) => {
             language
         };
 
-        if (cover) songData.cover = cover;
-
-
         // Send to backend
         const backendRes = await fetch('https://uploader-backend-1.onrender.com/upload', {
             method: 'POST',
@@ -124,4 +131,3 @@ form.addEventListener('submit', async (e) => {
         submitBtn.querySelector('.button-text').textContent = 'Upload';
     }
 });
-
