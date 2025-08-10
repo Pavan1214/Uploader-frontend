@@ -1,10 +1,17 @@
 // ---------------------- Default Covers ----------------------
 const defaultCovers = [
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754844145/60ac9991-e83e-4de4-bfb4-c341129237e0_ssywaf.jpg",
     "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825471/frame-harirak-iPwHUd19R38-unsplash_h0t7ig.jpg", 
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754844145/8499bcf4-2b41-46f2-8bce-fea5c3882997_alkw4v.jpg",
     "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825480/mikkel-bech-OwMIhcZu_X8-unsplash_cs78l3.jpg", 
-    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825473/leo-wieling-bG8U3kaZltE-unsplash_nzv8gm.jpg", 
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754844145/5e23b28e-0a67-43da-b13e-b90342ac5d35_cosrfe.jpg",
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825473/leo-wieling-bG8U3kaZltE-unsplash_nzv8gm.jpg",
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754844145/Aqui_o_endere%C3%A7o_%C3%A9_Jos%C3%A9_Lins_do_rego_89_Bairro_Tupi_grhesh.jpg", 
     "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825480/kevin-mccutcheon-TcSckNRL9J8-unsplash_a1qyag.jpg",
-    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825482/lee-campbell-QVnw_3l_n0Y-unsplash_h7kk6d.jpg"  
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754844145/0a140df0-9fa6-49e0-8e93-bb1c2458d529_hw3ta9.jpg",
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754825482/lee-campbell-QVnw_3l_n0Y-unsplash_h7kk6d.jpg"  ,
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754844147/clef-593912_e1hdpa.jpg",
+    "https://res.cloudinary.com/dva6xndtq/image/upload/v1754844146/e12c8b7b-5453-40f7-824b-11e1d04d4c3e_ec0a9i.jpg"
 ];
 
 // DOM Elements
